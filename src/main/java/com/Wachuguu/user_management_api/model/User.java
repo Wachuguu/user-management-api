@@ -1,6 +1,9 @@
 package com.Wachuguu.user_management_api.model;
 
+
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "users")
@@ -9,7 +12,11 @@ public class User{
     @ Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Name is required")
+    @Size(min=2, max = 100, message = "Name must be between 2 and 100 characters")
     private String name;
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
     private String email;
     public Long getId() {return id;}
 
