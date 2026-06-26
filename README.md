@@ -5,12 +5,27 @@ implementing full CRUD operations, input validation, error handling,
 and interactive API documentation.
 
 ## Tech Stack
+- Java 21
+- Spring Boot 4.1
+- PostgreSQL
+- Spring Data JPA
+- Spring Validation
+- Swagger/OpenAPI
+- Maven
+- Docker (for deployment)
+- Render (hosting)
 
- Technology : Purpose 
+## Running it locally
+You'll need Java 21, Maven, and PostgreSQL installed.
 
- Java 21 : Core language 
- Spring Boot 4.1 : API framework 
- PostgreSQL : Database 
- Spring Data JPA : Database ORM 
- Spring Validation : Input validation 
- Maven : Dependency management 
+**Set up the database:**
+
+sudo -u postgres psql
+CREATE DATABASE userdb;
+ALTER USER postgres PASSWORD 'postgres';
+\q
+
+Run the app:
+mvn spring-boot:run
+It starts on port 8080.
+
